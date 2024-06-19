@@ -19,5 +19,15 @@ export const resolvers = {
 
       return article;
     }
+  },
+  Mutation: {
+    createArticle: async (_, args) => {
+      const { article } = args;
+      
+      const newArticle = new Article(article);
+      await newArticle.save();
+
+      return newArticle;
+    }
   }
 }
