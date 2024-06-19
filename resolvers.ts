@@ -40,6 +40,21 @@ export const resolvers = {
       });
 
       return "Đã xóa";
+    },
+    updateArticle: async (_, args) => {
+      const { id, article } = args;
+
+      await Article.updateOne({
+        _id: id,
+        deleted: false
+      }, article);
+
+      const data = await Article.findOne({
+        _id: id,
+        deleted: false
+      });
+
+      return data;
     }
   }
 }
