@@ -5,7 +5,8 @@ export const typeDefs = gql`
     id: String,
     title: String,
     avatar: String,
-    description: String
+    description: String,
+    category: Category
   }
 
   type Category {
