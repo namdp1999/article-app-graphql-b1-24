@@ -4,8 +4,8 @@ env.config();
 import { connect } from "./config/database";
 import { ApolloServer } from "apollo-server-express";
 
-import { resolvers } from "./resolvers";
 import { typeDefs } from "./typeDefs/index.typeDefs";
+import { resolvers } from "./resolvers/index.resolver";
 
 const startServer = async () => {
   connect();
